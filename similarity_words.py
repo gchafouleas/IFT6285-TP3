@@ -17,7 +17,7 @@ vocab = [token for token in vocab if not token in stop_words]
 vocab = [token for token in vocab if token not in string.punctuation]
 print(len(vocab))
 tokens = nlp("alchool beach xenphobic cold hot because the person want christmas construction narita boolean to be chris hello person nuts tasty perpetuates craving clinic showers inarticulate autumn classics australia")
-#tokens = nlp("alchool person christmas")
+#tokens = nlp("nuts tasty perpetuates craving clinic showers inarticulate autumn classics australia")
 
 #tokens = vocab[:10]
 
@@ -40,7 +40,6 @@ for token1 in tokens:
             count_similar_words +=1
     if count_similar_words != 0:
         index_words = np.array(similar_words_similarity_value).argsort()[::-1]
-        print(np.array(similar_words_similarity_value)[index_words])
         similar_word_entry.append(word.text)
         similar_word_entry.append(count_similar_words)
         similar_words = np.array(similar_words)[index_words]
